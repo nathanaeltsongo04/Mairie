@@ -7,17 +7,17 @@ $all = $data->afficher();
 
 if (isset($_GET['msg']) == 'true') {
 ?>
-<script>
-Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: '<?php echo $_GET['info'] ?>',
-    showConfirmButton: false,
-    timer: 2800
-}).then(function() {
-    location.replace('services.php');
-});
-</script>
+    <script>
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '<?php echo $_GET['info'] ?>',
+            showConfirmButton: false,
+            timer: 2800
+        }).then(function() {
+            location.replace('services.php');
+        });
+    </script>
 <?php } ?>
 <!-- Right side columns -->
 <div class="col-lg-12">
@@ -27,8 +27,7 @@ Swal.fire({
             <div class="card recent-sales overflow-auto">
 
                 <div class="filter">
-                    <a class="icon " data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                            class="bi bi-plus-circle-fill h4"></i></a>
+                    <a class="icon " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle-fill h4"></i></a>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><?= $pageTitle ?></h5>
@@ -48,28 +47,26 @@ Swal.fire({
                             <?php
                             foreach ($all as $key => $val) {
                             ?>
-                            <tr>
-                                <th scope="row fw bold"><?= $val['CODESERVICE'] ?></th>
-                                <td class="fw bold"><?= $val['DESIGNATION'] ?></td>
-                                <td class="fw bold"><?= $val['EMAIL'] ?></td>
-                                <td class="fw bold"><?= $val['AUTEUR'] ?></td>
-                                <td class="fw bold text-center p-md-2">
-                                    <a class="text-info mx-auto md-2"
-                                        href="./updateservices.php?id=<?= $val['CODESERVICE'] ?>">
-                                        <span class="badge bg-success ">
-                                            <i class="bi bi-pencil-square fa-lg "></i>
-                                        </span>
-                                    </a>
-                                    <a class="text-info mx-auto pd-2"
-                                        href="./controller/services.php?id=<?= $val['CODESERVICE'] ?>&supprimer=true">
-                                        <span class="badge bg-danger ">
-                                            <i class="bi bi-trash fa-lg "></i>
-                                        </span>
-                                    </a>
+                                <tr>
+                                    <th scope="row fw bold"><?= $val['CODESERVICE'] ?></th>
+                                    <td class="fw bold"><?= $val['DESIGNATION'] ?></td>
+                                    <td class="fw bold"><?= $val['EMAIL'] ?></td>
+                                    <td class="fw bold"><?= $val['AUTEUR'] ?></td>
+                                    <td class="fw bold text-center p-md-2">
+                                        <a class="text-info mx-auto md-2" href="./updateservices.php?id=<?= $val['CODESERVICE'] ?>">
+                                            <span class="badge bg-success ">
+                                                <i class="bi bi-pencil-square fa-lg "></i>
+                                            </span>
+                                        </a>
+                                        <a class="text-info mx-auto pd-2" href="./controller/services.php?id=<?= $val['CODESERVICE'] ?>&supprimer=true">
+                                            <span class="badge bg-danger ">
+                                                <i class="bi bi-trash fa-lg "></i>
+                                            </span>
+                                        </a>
 
-                                </td>
+                                    </td>
 
-                            </tr>
+                                </tr>
                             <?php
                             }
                             ?>
@@ -99,14 +96,12 @@ Swal.fire({
 
                     <div class="col-md-12 mb-4 ">
                         <div class="input-group has-validation">
-                            <input type="text" name="designation" class="form-control" id="yourPassword"
-                                placeholder="Désignation" required>
+                            <input type="text" name="designation" class="form-control" id="yourPassword" placeholder="Désignation" required>
                         </div>
                     </div>
 
                     <div class="col-md-12 mb-4 mt-2">
-                        <input type="email" name="email" class="form-control" id="yourPassword"
-                            placeholder="xxxxxx@gmail.com" required>
+                        <input type="email" name="email" class="form-control" id="yourPassword" placeholder="xxxxxx@gmail.com" required>
                         <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
